@@ -40,6 +40,7 @@ class Demo():
         cm.setFrame(-10, 10, -10, 10)
         self.preview_plane=render.attachNewNode(cm.generate())
         self.preview_plane.setShader(Shader.load(Shader.SL_GLSL,'v.glsl','prev.glsl'))
+        self.preview_plane.setShaderInput("size",float(size))
         self.preview_plane.setTexture(self.pong['tex'])
         self.preview_plane.setLightOff()
         self.preview_plane.setPos(0,30,0)
