@@ -22,7 +22,8 @@ void main()
     vec3 perp1 = normalize(cross(norm,temp));
     vec3 perp2 = normalize(cross(norm,perp1));
     //use the basis to move the normal in its own space by the offset                       
-    norm -=(((n.r-me.r)-(s.r-me.r))*perp1 - ((e.r-me.r)-(w.r-me.r))*perp2);
+    norm +=(((n.r-me.r)-(s.r-me.r))*perp1 - ((e.r-me.r)-(w.r-me.r))*perp2);
+    //norm +=(((n.g-me.g)-(s.g-me.g))*perp1 - ((e.g-me.g)-(w.g-me.g))*perp2);
     norm = normalize(norm); 
     norm=norm*0.5+0.5;
     gl_FragData[0]=vec4(norm,1.0);  
