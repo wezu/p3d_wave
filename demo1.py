@@ -71,7 +71,7 @@ class Demo():
         self.water_plane.lookAt(0, 0, -1)
         self.water_plane.setPos(0,0,1.0)
         self.water_plane.flattenStrong()
-        self.water_plane.setShader(Shader.load(Shader.SL_GLSL,'prev_v.glsl','prev.glsl'))
+        self.water_plane.setShader(Shader.load(Shader.SL_GLSL,'water_v.glsl','water_f.glsl'))
         self.water_plane.setShaderInput("size",float(size))
         self.water_plane.setShaderInput("normal_map",loader.loadTexture("normal.png"))
         self.water_plane.setTexture(self.pong['tex'])           
@@ -138,7 +138,8 @@ class Demo():
         tex.setMinfilter(texFilter)
         props = FrameBufferProperties()
         props.setRgbaBits(16, 16, 0, 0)
-        props.setSrgbColor(False)        
+        props.setSrgbColor(False)  
+        props.setFloatColor(True)      
         buff=base.win.makeTextureBuffer("buff", size, size, tex, fbp=props)
         #the camera for the buffer
         cam=base.makeCamera(win=buff)

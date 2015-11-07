@@ -17,7 +17,7 @@ void main()
     final*=0.3; 
     if  (final.r>0.0)
         {
-        final.g+=0.0008;
+        final.g+=0.0009;
         //final.g+=0.02;
         final.r*=clamp((1.0-final.g),0.2, 1.0);   
         }  
