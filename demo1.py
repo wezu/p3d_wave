@@ -15,7 +15,9 @@ class Demo():
         self.update_speed=1.0/60.0 #the waves only look good when generated at this constant rate (1/60=60fps)
        
         
-        base = ShowBase.ShowBase()
+        base = ShowBase.ShowBase()        
+        base.cam.setPos(128, -128, 80)
+        base.cam.lookAt(128, 128, 0)
         
         #wave source buffer
         self.wave_source=self.makeBuffer(size=256, texFilter=Texture.FTNearest)
